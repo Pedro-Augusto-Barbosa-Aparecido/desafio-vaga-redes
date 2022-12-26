@@ -17,6 +17,10 @@ class City(models.Model):
   state = models.ForeignKey(State, on_delete=models.CASCADE)
   created_at = models.DateField(auto_now=True)
 
+  class Meta:
+    verbose_name = "City"
+    verbose_name_plural = "Cities"
+
   def __str__(self) -> str:
     return self.name
 
