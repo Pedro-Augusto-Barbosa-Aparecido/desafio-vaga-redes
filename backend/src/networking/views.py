@@ -23,7 +23,7 @@ class NetworkingConnectOnCellView(View):
 
     # save connection information
     connection_information = \
-      NetworkingInformation.objects.create(size=size, networking=cell_to_connect)
+      NetworkingInformation.objects.create(size=size, networking=cell_to_connect, created_at="2023-01-01")
 
     return JsonResponse({
       "cell_connected": cell_to_connect.cell_name, 
@@ -37,7 +37,7 @@ class NetworkingConnectOnCellView(View):
 
 class NetworkingListInformation(View):
   def get(self, request, city: str):
-    cell_connection_information = NetworkingInformation.objects.all().filter(
+    cell_connection_information = NetworkingInformation.objects.all().order_by("created_at").filter(
       networking__location__name__icontains=city
     ).values(
       "created_at", "id", "networking__cell_name", "networking_id", "size"
@@ -46,9 +46,22 @@ class NetworkingListInformation(View):
     # formating returns
     information_formatted = {}
     for info in cell_connection_information:
-      if info["networking__cell_name"] not in information_formatted.keys():
-        information_formatted[info["networking__cell_name"]] = [info]
+      if str(info["created_at"]) not in information_formatted.keys():
+        information_formatted[str(info["created_at"])] = [info]
       else:
-        information_formatted[info["networking__cell_name"]].append(info)
+        information_formatted[str(info["created_at"])].append(info)
 
-    return JsonResponse({"results": information_formatted})
+    _information_formatted = {}
+    cells = []
+    for key in information_formatted.keys():
+      for info in information_formatted[key]:
+        if info["networking__cell_name"] not in _information_formatted:
+          _information_formatted[info["networking__cell_name"]] = [info]
+          cells.append(info["networking__cell_name"])
+        else:
+          _information_formatted[info["networking__cell_name"]].append(info)
+
+      information_formatted[key] = _information_formatted
+
+
+    return JsonResponse({"results": information_formatted, "header": cells})

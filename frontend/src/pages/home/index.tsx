@@ -5,97 +5,1203 @@ import Chart from "react-google-charts";
 
 import colors from "tailwindcss/colors";
 
-const dataS = {
+const data = {
   results: {
-    "54CAS": [
-      {
-        created_at: "2022-12-28T10:55:25.052",
-        id: 45,
-        networking__cell_name: "54CAS",
-        networking_id: 6,
-        size: "1900957.31",
-      },
-    ],
-    "65SCA": [
-      {
-        created_at: "2022-12-28T10:50:45.981",
-        id: 40,
-        networking__cell_name: "65SCA",
-        networking_id: 7,
-        size: "2860732.86",
-      },
-      {
-        created_at: "2022-12-28T10:50:48.769",
-        id: 43,
-        networking__cell_name: "65SCA",
-        networking_id: 7,
-        size: "1988581.50",
-      },
-    ],
-    "08BSF": [
-      {
-        created_at: "2022-12-28T10:50:47.727",
-        id: 41,
-        networking__cell_name: "08BSF",
-        networking_id: 9,
-        size: "2896671.67",
-      },
-      {
-        created_at: "2022-12-28T10:50:48.241",
-        id: 42,
-        networking__cell_name: "08BSF",
-        networking_id: 9,
-        size: "1864445.57",
-      },
-    ],
-    "43CSA": [
-      {
-        created_at: "2022-12-28T10:55:23.238",
-        id: 44,
-        networking__cell_name: "43CSA",
-        networking_id: 10,
-        size: "1978805.49",
-      },
-    ],
+    "2022-12-28": {
+      "34VDS": [
+        {
+          created_at: "2022-12-28",
+          id: 85,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "1886946.58",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 87,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2896193.15",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 76,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "1934545.24",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 79,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2472197.83",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 78,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2932833.23",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 77,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2702987.68",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 89,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2482795.34",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 99,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2317310.03",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 104,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2620440.50",
+        },
+      ],
+      "08BSF": [
+        {
+          created_at: "2022-12-28",
+          id: 86,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1999207.46",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 88,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2229569.22",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 74,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2613779.69",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 81,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1858619.86",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 93,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2567959.68",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 100,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2633314.45",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 98,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1831921.02",
+        },
+      ],
+      "65SCA": [
+        {
+          created_at: "2022-12-28",
+          id: 84,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2875540.33",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 75,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2130746.16",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 80,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2923779.75",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 90,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "1893874.55",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 91,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2310176.88",
+        },
+      ],
+      "43CSA": [
+        {
+          created_at: "2022-12-29",
+          id: 82,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2034455.56",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 83,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2707341.15",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 92,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2347612.14",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 96,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2872268.06",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 95,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "1806397.08",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 101,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2827167.01",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 97,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2562444.42",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 102,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2751877.60",
+        },
+      ],
+      "54CAS": [
+        {
+          created_at: "2022-12-30",
+          id: 94,
+          networking__cell_name: "54CAS",
+          networking_id: 6,
+          size: "2336302.91",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 103,
+          networking__cell_name: "54CAS",
+          networking_id: 6,
+          size: "2266500.64",
+        },
+      ],
+    },
+    "2022-12-29": {
+      "34VDS": [
+        {
+          created_at: "2022-12-28",
+          id: 85,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "1886946.58",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 87,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2896193.15",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 76,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "1934545.24",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 79,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2472197.83",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 78,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2932833.23",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 77,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2702987.68",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 89,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2482795.34",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 99,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2317310.03",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 104,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2620440.50",
+        },
+      ],
+      "08BSF": [
+        {
+          created_at: "2022-12-28",
+          id: 86,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1999207.46",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 88,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2229569.22",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 74,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2613779.69",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 81,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1858619.86",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 93,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2567959.68",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 100,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2633314.45",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 98,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1831921.02",
+        },
+      ],
+      "65SCA": [
+        {
+          created_at: "2022-12-28",
+          id: 84,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2875540.33",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 75,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2130746.16",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 80,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2923779.75",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 90,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "1893874.55",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 91,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2310176.88",
+        },
+      ],
+      "43CSA": [
+        {
+          created_at: "2022-12-29",
+          id: 82,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2034455.56",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 83,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2707341.15",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 92,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2347612.14",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 96,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2872268.06",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 95,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "1806397.08",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 101,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2827167.01",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 97,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2562444.42",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 102,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2751877.60",
+        },
+      ],
+      "54CAS": [
+        {
+          created_at: "2022-12-30",
+          id: 94,
+          networking__cell_name: "54CAS",
+          networking_id: 6,
+          size: "2336302.91",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 103,
+          networking__cell_name: "54CAS",
+          networking_id: 6,
+          size: "2266500.64",
+        },
+      ],
+    },
+    "2022-12-30": {
+      "34VDS": [
+        {
+          created_at: "2022-12-28",
+          id: 85,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "1886946.58",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 87,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2896193.15",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 76,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "1934545.24",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 79,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2472197.83",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 78,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2932833.23",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 77,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2702987.68",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 89,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2482795.34",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 99,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2317310.03",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 104,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2620440.50",
+        },
+      ],
+      "08BSF": [
+        {
+          created_at: "2022-12-28",
+          id: 86,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1999207.46",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 88,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2229569.22",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 74,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2613779.69",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 81,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1858619.86",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 93,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2567959.68",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 100,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2633314.45",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 98,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1831921.02",
+        },
+      ],
+      "65SCA": [
+        {
+          created_at: "2022-12-28",
+          id: 84,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2875540.33",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 75,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2130746.16",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 80,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2923779.75",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 90,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "1893874.55",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 91,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2310176.88",
+        },
+      ],
+      "43CSA": [
+        {
+          created_at: "2022-12-29",
+          id: 82,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2034455.56",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 83,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2707341.15",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 92,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2347612.14",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 96,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2872268.06",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 95,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "1806397.08",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 101,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2827167.01",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 97,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2562444.42",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 102,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2751877.60",
+        },
+      ],
+      "54CAS": [
+        {
+          created_at: "2022-12-30",
+          id: 94,
+          networking__cell_name: "54CAS",
+          networking_id: 6,
+          size: "2336302.91",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 103,
+          networking__cell_name: "54CAS",
+          networking_id: 6,
+          size: "2266500.64",
+        },
+      ],
+    },
+    "2022-12-31": {
+      "34VDS": [
+        {
+          created_at: "2022-12-28",
+          id: 85,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "1886946.58",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 87,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2896193.15",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 76,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "1934545.24",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 79,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2472197.83",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 78,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2932833.23",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 77,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2702987.68",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 89,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2482795.34",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 99,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2317310.03",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 104,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2620440.50",
+        },
+      ],
+      "08BSF": [
+        {
+          created_at: "2022-12-28",
+          id: 86,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1999207.46",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 88,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2229569.22",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 74,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2613779.69",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 81,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1858619.86",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 93,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2567959.68",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 100,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2633314.45",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 98,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1831921.02",
+        },
+      ],
+      "65SCA": [
+        {
+          created_at: "2022-12-28",
+          id: 84,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2875540.33",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 75,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2130746.16",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 80,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2923779.75",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 90,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "1893874.55",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 91,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2310176.88",
+        },
+      ],
+      "43CSA": [
+        {
+          created_at: "2022-12-29",
+          id: 82,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2034455.56",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 83,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2707341.15",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 92,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2347612.14",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 96,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2872268.06",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 95,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "1806397.08",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 101,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2827167.01",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 97,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2562444.42",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 102,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2751877.60",
+        },
+      ],
+      "54CAS": [
+        {
+          created_at: "2022-12-30",
+          id: 94,
+          networking__cell_name: "54CAS",
+          networking_id: 6,
+          size: "2336302.91",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 103,
+          networking__cell_name: "54CAS",
+          networking_id: 6,
+          size: "2266500.64",
+        },
+      ],
+    },
+    "2023-01-01": {
+      "34VDS": [
+        {
+          created_at: "2022-12-28",
+          id: 85,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "1886946.58",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 87,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2896193.15",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 76,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "1934545.24",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 79,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2472197.83",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 78,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2932833.23",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 77,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2702987.68",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 89,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2482795.34",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 99,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2317310.03",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 104,
+          networking__cell_name: "34VDS",
+          networking_id: 8,
+          size: "2620440.50",
+        },
+      ],
+      "08BSF": [
+        {
+          created_at: "2022-12-28",
+          id: 86,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1999207.46",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 88,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2229569.22",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 74,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2613779.69",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 81,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1858619.86",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 93,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2567959.68",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 100,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "2633314.45",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 98,
+          networking__cell_name: "08BSF",
+          networking_id: 9,
+          size: "1831921.02",
+        },
+      ],
+      "65SCA": [
+        {
+          created_at: "2022-12-28",
+          id: 84,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2875540.33",
+        },
+        {
+          created_at: "2022-12-28",
+          id: 75,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2130746.16",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 80,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2923779.75",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 90,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "1893874.55",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 91,
+          networking__cell_name: "65SCA",
+          networking_id: 7,
+          size: "2310176.88",
+        },
+      ],
+      "43CSA": [
+        {
+          created_at: "2022-12-29",
+          id: 82,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2034455.56",
+        },
+        {
+          created_at: "2022-12-29",
+          id: 83,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2707341.15",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 92,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2347612.14",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 96,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2872268.06",
+        },
+        {
+          created_at: "2022-12-30",
+          id: 95,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "1806397.08",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 101,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2827167.01",
+        },
+        {
+          created_at: "2022-12-31",
+          id: 97,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2562444.42",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 102,
+          networking__cell_name: "43CSA",
+          networking_id: 10,
+          size: "2751877.60",
+        },
+      ],
+      "54CAS": [
+        {
+          created_at: "2022-12-30",
+          id: 94,
+          networking__cell_name: "54CAS",
+          networking_id: 6,
+          size: "2336302.91",
+        },
+        {
+          created_at: "2023-01-01",
+          id: 103,
+          networking__cell_name: "54CAS",
+          networking_id: 6,
+          size: "2266500.64",
+        },
+      ],
+    },
   },
-};
-
-export const data = [
-  ["Year", "Sales", "Expenses", "Profit"],
-  ["2014", 1000, 400, 200],
-  ["2015", 1170, 460, 250],
-  ["2016", 660, 1120, 300],
-  ["2017", 1030, 540, 350],
-];
-
-export const options = {
-  chart: {
-    title: "Company Performance",
-    subtitle: "Sales, Expenses, and Profit: 2014-2017",
-  },
+  header: ["34VDS", "08BSF", "65SCA", "43CSA", "54CAS"],
 };
 
 export function Home() {
-  function formatDataChartCellByUserConnected() {
-    const keys = Object.keys(dataS.results);
-    const dataFormatted = [["Day", ...keys]];
-    var aux = ["2015"];
-    console.log(dataS);
-    for (const key of keys) {
-      const info = dataS.results[key];
-      aux.push(info.length);
+  function formatDataChartCellByUserConnected(data: any, header: string[]) {
+    const dates = Object.keys(data);
+    const dataFormatted = [["Day", ...header]];
+
+    for (const date of dates) {
+      try {
+        const aux = [date];
+
+        for (const cell in data[date]) {
+          aux.push(data[date][cell].length);
+        }
+
+        dataFormatted.push(aux);
+      } catch (e) {
+        // console.log(e);
+      }
     }
 
-    dataFormatted.push(aux);
-    var aux = ["2016"];
-    console.log(dataS);
-    for (const key of keys) {
-      const info = dataS.results[key];
-      aux.push(info.length);
+    return dataFormatted;
+  }
+
+  function formatDataChartSizeConnection(data: any, header: string[]) {
+    const dates = Object.keys(data);
+    const dataFormatted = [["Day", ...header]];
+
+    for (const date of dates) {
+      try {
+        const aux = [date];
+
+        for (const cell in data[date]) {
+          aux.push(
+            (
+              data[date][cell].reduce((acc: number, cellInfo: any) => {
+                return Number(cellInfo.size) + acc;
+              }, 0) / Math.pow(10, 6)
+            ).toFixed(3)
+          );
+        }
+
+        dataFormatted.push(aux);
+      } catch (e) {
+        // console.log(e);
+      }
     }
 
-    dataFormatted.push(aux);
-    console.log(dataFormatted);
     return dataFormatted;
   }
 
@@ -132,8 +1238,13 @@ export function Home() {
             chartType="Bar"
             width="100%"
             height="400px"
-            data={formatDataChartCellByUserConnected()}
-            options={options}
+            data={formatDataChartCellByUserConnected(data.results, data.header)}
+            options={{
+              chart: {
+                title: "Users connected per cells",
+                subtitle: "Quantity of connections of enodeb",
+              },
+            }}
           />
         </section>
         <section className="w-1/2 p-4 bg-white rounded-md">
@@ -141,8 +1252,13 @@ export function Home() {
             chartType="Bar"
             width="100%"
             height="400px"
-            data={data}
-            options={options}
+            data={formatDataChartSizeConnection(data.results, data.header)}
+            options={{
+              chart: {
+                title: "Size of connect each cells",
+                subtitle: "Size quantity of connections cells per date",
+              },
+            }}
           />
         </section>
       </main>
