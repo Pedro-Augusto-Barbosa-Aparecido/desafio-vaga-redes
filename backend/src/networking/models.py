@@ -30,12 +30,12 @@ class City(models.Model):
 
 class Networking(models.Model):
   cell_name = models.CharField(max_length=255, null=True, blank=True, unique=True)
-  enodeb_name = models.CharField(max_length=255, null=True, blank=True, unique=True)
+  enodeb_name = models.CharField(max_length=255, null=True, blank=True, unique=False)
 
   location = models.ForeignKey(City, on_delete=models.DO_NOTHING)
 
   def __str__(self) -> str:
-    return f"{self.cell_name} - {self.enodeb_name}"
+    return f"{self.cell_name} - {self.enodeb_name} | {self.location}"
 
   def __repr__(self) -> str:
     return f"<Networking {self} - {hex(id(self))}>"
@@ -44,9 +44,10 @@ class Networking(models.Model):
 class NetworkingInformation(models.Model):
   size = models.DecimalField(decimal_places=2, max_digits=100)
   networking = models.ForeignKey(Networking, on_delete=models.PROTECT)
+  created_at = models.DateTimeField(auto_now=True)
 
   def __str__(self) -> str:
-    return f"{self.networking}: {self.size}"
+    return f"{self.networking} -> {self.size}"
 
   def __repr__(self) -> str:
     return f"<NetworkingInformation {self} - {hex(id(self))}>"
