@@ -1255,7 +1255,7 @@ export function Home() {
             data={formatDataChartSizeConnection(data.results, data.header)}
             options={{
               chart: {
-                title: "Size of connect each cells",
+                title: "Size (MB) of connect each cells",
                 subtitle: "Size quantity of connections cells per date",
               },
             }}
