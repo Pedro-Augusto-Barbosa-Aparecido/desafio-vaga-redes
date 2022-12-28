@@ -2,7 +2,11 @@
 module.exports = {
   content: ["src/**/*.tsx"],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        "container-graph": "calc(100% - 4rem)",
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };
