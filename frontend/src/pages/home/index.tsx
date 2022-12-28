@@ -5,7 +5,7 @@ import Chart from "react-google-charts";
 
 import colors from "tailwindcss/colors";
 
-const data = {
+const dataS = {
   results: {
     "54CAS": [
       {
@@ -60,16 +60,42 @@ const data = {
   },
 };
 
-export function Home() {
-  function formatDataChartCellByUserConnected(data: any) {
-    const keys = Object.keys(data.results);
-    const dataFormatted = [["Cell", "Connections"]];
+export const data = [
+  ["Year", "Sales", "Expenses", "Profit"],
+  ["2014", 1000, 400, 200],
+  ["2015", 1170, 460, 250],
+  ["2016", 660, 1120, 300],
+  ["2017", 1030, 540, 350],
+];
 
+export const options = {
+  chart: {
+    title: "Company Performance",
+    subtitle: "Sales, Expenses, and Profit: 2014-2017",
+  },
+};
+
+export function Home() {
+  function formatDataChartCellByUserConnected() {
+    const keys = Object.keys(dataS.results);
+    const dataFormatted = [["Day", ...keys]];
+    var aux = ["2015"];
+    console.log(dataS);
     for (const key of keys) {
-      const info = data.results[key];
-      dataFormatted.push([key, info.length]);
+      const info = dataS.results[key];
+      aux.push(info.length);
     }
 
+    dataFormatted.push(aux);
+    var aux = ["2016"];
+    console.log(dataS);
+    for (const key of keys) {
+      const info = dataS.results[key];
+      aux.push(info.length);
+    }
+
+    dataFormatted.push(aux);
+    console.log(dataFormatted);
     return dataFormatted;
   }
 
@@ -103,38 +129,20 @@ export function Home() {
       <main className="w-10/12 p-4 bg-slate-900 flex items-center justify-center gap-4">
         <section className="w-1/2 p-4 bg-white rounded-md">
           <Chart
-            chartType={"Bar"}
-            options={{
-              backgroundColor: "#0f172a",
-              // animation: {},
-              title: "User connections per cell of Santa Rita",
-              vAxis: {
-                title: "Connections",
-                minValue: 0,
-              },
-              hAxis: {},
-              height: 400,
-              chartArea: { width: "30%", height: "fit-content" },
-            }}
-            data={formatDataChartCellByUserConnected(data)}
+            chartType="Bar"
+            width="100%"
+            height="400px"
+            data={formatDataChartCellByUserConnected()}
+            options={options}
           />
         </section>
         <section className="w-1/2 p-4 bg-white rounded-md">
           <Chart
-            chartType={"Bar"}
-            options={{
-              backgroundColor: "#0f172a",
-              // animation: {},
-              title: "User connections per cell of Santa Rita",
-              vAxis: {
-                title: "Connections",
-                minValue: 0,
-              },
-              hAxis: {},
-              height: 400,
-              chartArea: { width: "30%" },
-            }}
-            data={formatDataChartCellByUserConnected(data)}
+            chartType="Bar"
+            width="100%"
+            height="400px"
+            data={data}
+            options={options}
           />
         </section>
       </main>
