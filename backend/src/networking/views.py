@@ -4,7 +4,16 @@ import sys
 from django.http import JsonResponse
 from django.views.generic import View
 
-from .models import Networking, NetworkingInformation
+from .models import Networking, NetworkingInformation, City
+
+
+class CityListView(View):
+  def get(self, request):
+    cities = City.objects.all().values("name", "id")
+
+    return JsonResponse({
+      "results": list(cities)
+    })
 
 
 class NetworkingConnectOnCellView(View):
@@ -23,7 +32,7 @@ class NetworkingConnectOnCellView(View):
 
     # save connection information
     connection_information = \
-      NetworkingInformation.objects.create(size=size, networking=cell_to_connect, created_at="2023-01-01")
+      NetworkingInformation.objects.create(size=size, networking=cell_to_connect, created_at="2023-12-31")
 
     return JsonResponse({
       "cell_connected": cell_to_connect.cell_name, 
@@ -38,9 +47,9 @@ class NetworkingConnectOnCellView(View):
 class NetworkingListInformation(View):
   def get(self, request, city: str):
     cell_connection_information = NetworkingInformation.objects.all().order_by("created_at").filter(
-      networking__location__name__icontains=city
+      networking__location__name__iexact=city
     ).values(
-      "created_at", "id", "networking__cell_name", "networking_id", "size"
+      "created_at", "id", "networking__cell_name", "networking_id", "size", "networking__location__name"
     )  
     
     # formating returns
@@ -57,11 +66,13 @@ class NetworkingListInformation(View):
       for info in information_formatted[key]:
         if info["networking__cell_name"] not in _information_formatted:
           _information_formatted[info["networking__cell_name"]] = [info]
-          cells.append(info["networking__cell_name"])
+          if info["networking__cell_name"] not in cells:
+            cells.append(info["networking__cell_name"])
         else:
           _information_formatted[info["networking__cell_name"]].append(info)
 
       information_formatted[key] = _information_formatted
+      _information_formatted = {}
 
 
     return JsonResponse({"results": information_formatted, "header": cells})
