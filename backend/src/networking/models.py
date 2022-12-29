@@ -44,7 +44,7 @@ class Networking(models.Model):
 class NetworkingInformation(models.Model):
   size = models.DecimalField(decimal_places=2, max_digits=100)
   networking = models.ForeignKey(Networking, on_delete=models.PROTECT)
-  created_at = models.DateField(editable=True)
+  created_at = models.DateField(auto_now=True, editable=True)
 
   def __str__(self) -> str:
     return f"{self.networking} -> {self.size}"

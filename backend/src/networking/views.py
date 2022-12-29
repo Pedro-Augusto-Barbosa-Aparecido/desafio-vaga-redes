@@ -32,7 +32,7 @@ class NetworkingConnectOnCellView(View):
 
     # save connection information
     connection_information = \
-      NetworkingInformation.objects.create(size=size, networking=cell_to_connect, created_at="2023-12-31")
+      NetworkingInformation.objects.create(size=size, networking=cell_to_connect)
 
     return JsonResponse({
       "cell_connected": cell_to_connect.cell_name, 
